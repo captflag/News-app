@@ -1,0 +1,87 @@
+{
+  "short_name": "NewsPulse",
+  "name": "NewsPulse - Premium News Aggregator",
+  "description": "Get the latest headlines from around the world with a beautiful dark theme interface. Free, no API key required.",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#6366f1",
+  "background_color": "#0a0a0f",
+  "categories": [
+    "news",
+    "entertainment",
+    "lifestyle"
+  ],
+  "lang": "en-US",
+  "dir": "ltr",
+  "prefer_related_applications": false,
+  "shortcuts": [
+    {
+      "name": "Business News",
+      "short_name": "Business",
+      "description": "View latest business news",
+      "url": "/business",
+      "icons": [
+        {
+          "src": "logo192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Technology News",
+      "short_name": "Technology",
+      "description": "View latest technology news",
+      "url": "/technology",
+      "icons": [
+        {
+          "src": "logo192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Sports News",
+      "short_name": "Sports",
+      "description": "View latest sports news",
+      "url": "/sports",
+      "icons": [
+        {
+          "src": "logo192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Your Bookmarks",
+      "short_name": "Bookmarks",
+      "description": "View your saved articles",
+      "url": "/bookmarks",
+      "icons": [
+        {
+          "src": "logo192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
+}

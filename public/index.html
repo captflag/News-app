@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0a0a0f" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="NewsPulse" />
+    
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="NewsPulse - Your premium news aggregator. Get the latest headlines from around the world with a beautiful dark theme interface. Free, no API key required."
+    />
+    <meta name="keywords" content="news, headlines, breaking news, world news, technology, sports, business, entertainment, science, health" />
+    <meta name="author" content="NewsPulse" />
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="NewsPulse - Premium News Aggregator" />
+    <meta property="og:description" content="Get the latest headlines from around the world with a beautiful dark theme interface." />
+    <meta property="og:image" content="%PUBLIC_URL%/logo512.png" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="NewsPulse - Premium News Aggregator" />
+    <meta name="twitter:description" content="Get the latest headlines from around the world with a beautiful dark theme interface." />
+    
+    <!-- PWA -->
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    
+    <title>NewsPulse - Premium News Aggregator</title>
+    
+    <style>
+      /* Critical CSS for initial load */
+      body {
+        margin: 0;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background-color: #0a0a0f;
+        color: #ffffff;
+      }
+      
+      /* Loading screen */
+      .initial-loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #0a0a0f;
+        z-index: 9999;
+      }
+      
+      .initial-loader-logo {
+        width: 64px;
+        height: 64px;
+        background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 32px;
+        margin-bottom: 24px;
+        animation: pulse 1.5s ease-in-out infinite;
+      }
+      
+      .initial-loader-text {
+        font-size: 14px;
+        color: #a0a0b0;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+      
+      @keyframes pulse {
+        0%, 100% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.05); opacity: 0.8; }
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    
+    <!-- Initial Loading Screen (hidden when React loads) -->
+    <div id="initial-loader" class="initial-loader">
+      <div class="initial-loader-logo">⚡</div>
+      <div class="initial-loader-text">Loading NewsPulse</div>
+    </div>
+    
+    <div id="root"></div>
+    
+    <script>
+      // Hide initial loader when React app loads
+      window.addEventListener('load', function() {
+        const loader = document.getElementById('initial-loader');
+        if (loader) {
+          loader.style.opacity = '0';
+          loader.style.transition = 'opacity 0.3s ease';
+          setTimeout(function() {
+            loader.style.display = 'none';
+          }, 300);
+        }
+      });
+    </script>
+  </body>
+</html>
